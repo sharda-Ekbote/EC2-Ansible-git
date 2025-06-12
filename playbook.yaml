@@ -18,8 +18,11 @@
         state: started
         enabled: true
 
-    - name: Clone GitHub repo to /var/www/html
+    - name: Clone GitHub repo into /var/www/html without subdir
       git:
-        repo: https://github.com/sharda-Ekbote/EC2-Ansible-git.git
+        repo: https://github.com/YOUR_USERNAME/EC2-Ansible-git.git
         dest: /var/www/html
         force: yes
+        single_branch: yes
+        depth: 1
+
