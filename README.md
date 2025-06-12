@@ -26,16 +26,19 @@ STEPS: LAUNCH A LINUX EC2 INSTANCE
     Pulls an Ansible playbook from GitHub
     Runs it locally on the same EC2 instance
     
-    #!/bin/bash
-# Update and install required packages
-yum update -y
-amazon-linux-extras install epel -y
-yum install -y ansible git
+   #!/bin/bash
+# Update OS and install Ansible
+apt update -y
+apt install -y ansible git
 
-# Clone your Ansible playbook repo
-cd /home/ec2-user
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+# Switch to home directory
+cd /home/ubuntu
 
-# Run the playbook locally
+# Clone your Git repo with playbook
+git clone https://github.com/sharda-Ekbote/EC2-Ansible-git.git
+
+# Go to playbook directory
+cd EC2-Ansible-git
+
+# Run the playbook locally on the EC2
 ansible-playbook -i localhost, -c local playbook.yml
