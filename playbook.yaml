@@ -1,7 +1,8 @@
-# playbook.yml
-- name: Setup web server on EC2
-  hosts: ec2
-  become: yes
+---
+- name: Setup EC2 web server
+  hosts: localhost
+  become: true
+  connection: local
   tasks:
     - name: Install Apache and Git
       yum:
@@ -10,14 +11,14 @@
           - git
         state: present
 
-    - name: Start Apache
+    - name: Start and enable Apache
       service:
         name: httpd
         state: started
-        enabled: yes
+        enabled: true
 
-    - name: Clone website files from Git
+    - name: Clone index.html from GitHub
       git:
-        repo:  https://github.com/sharda-Ekbote/EC2-Ansible-git.git
+        repo: https://github.com/sharda-Ekbote/EC2-Ansible-git.git
         dest: /var/www/html
         force: yes
