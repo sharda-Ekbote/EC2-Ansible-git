@@ -1,7 +1,8 @@
 # EC2-Ansible-git
 To set up an EC2 web server that loads an index.html file from a Git repository, you can follow the steps below. This walkthrough assumes you're using Amazon Linux 2 and a public GitHub repo.
 
-STEPS: LAUNCH A LINUX EC2 INSTANCE
+STEPS:LAUNCH A LINUX EC2 INSTANCE
+
 1.Log in to AWS Console.
 
 2.There you need to search EC2.This the dashboard for EC2,to create an instance you need to click on Launch Instance.
